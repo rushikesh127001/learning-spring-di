@@ -2,9 +2,7 @@ package sfg.learning.sfgdi.controllers;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import sfg.learning.sfgdi.services.GreetingServiceImpl;
-
-import static org.junit.jupiter.api.Assertions.*;
+import sfg.learning.sfgdi.services.PropertyInjectedGreeting;
 
 class PropertyInjectedControllerTest {
     PropertyInjectedController controller;
@@ -12,7 +10,7 @@ class PropertyInjectedControllerTest {
     @BeforeEach
     void setUp() {
         controller=new PropertyInjectedController();
-        controller.greetingService=new GreetingServiceImpl();
+        controller.greetingService=new PropertyInjectedGreeting();
     }
 
     @Test

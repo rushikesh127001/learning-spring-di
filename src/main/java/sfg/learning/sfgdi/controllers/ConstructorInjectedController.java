@@ -1,5 +1,6 @@
 package sfg.learning.sfgdi.controllers;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import sfg.learning.sfgdi.services.GreetingService;
 
@@ -7,7 +8,7 @@ import sfg.learning.sfgdi.services.GreetingService;
 public class ConstructorInjectedController {
     private final GreetingService greetingService;
 
-    public ConstructorInjectedController(GreetingService greetingService) {
+    public ConstructorInjectedController(@Qualifier("constructorInjectedGreeting") GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 
